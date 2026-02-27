@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 #define SERVER_IP "127.0.0.1" // Loopback
-#define PORT 8080
+#define PORT 8000
 #define BUFFER_SIZE 1024
 
 // recieve handler

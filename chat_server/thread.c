@@ -29,7 +29,6 @@ void add_client(client_t *client) {
       break;
     }
   }
-  printf("Maximum connections reached!\nCould not add client");
   pthread_mutex_unlock(&lock);
 }
 
@@ -70,10 +69,12 @@ void *handle_client(void *arg) {
     bytes_rcved = recv(client->socket, buffer, BUFFER_SIZE - 1, 0);
     if (bytes_rcved <= 0) {
       if (bytes_rcved == 0) {
-        printf("Client %s disconnected\n", client->username);
+        printf("[Thread %lu]: Client %s disconnected\n", pthread_self(),
+               client->username);
       } else {
         perror("recv failed");
       }
+      break;
     }
 
     buffer[bytes_rcved] = '\0';
