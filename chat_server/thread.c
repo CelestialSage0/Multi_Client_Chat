@@ -14,10 +14,18 @@ typedef struct {
   int socket;                 // client socket
   struct sockaddr_in address; // client address
   char username[32];
+  int authenticated; // 1->yes; 0->no
 } client_t;
+
+typedef struct {
+  char username[32];
+  char password[32];
+} user_record_t;
 
 // Assumung maximum clients are 100
 client_t *clients[100];
+user_record_t users[3] = {
+    {"alice", "0123"}, {"bob", "1234"}, {"charlie", "12345"}};
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 
 // Add client handler
@@ -45,13 +53,46 @@ void remove_client(int socket) {
 }
 
 // Broadcast handler
-void broadcast(char *message) {
+void broadcast(char *message, char *from_user) {
   pthread_mutex_lock(&lock);
   for (int i = 0; i < 100; i++) {
-    if (clients[i]) {
-      if (send(clients[i]->socket, message, strlen(message), 0) < 0) {
+    if (clients[i] && clients[i]->authenticated) {
+      char formatted[BUFFER_SIZE];
+      snprintf(formatted, sizeof(formatted), "BROADCAST: %s %s\n", from_user,
+               message);
+
+      if (send(clients[i]->socket, formatted, strlen(formatted), 0) < 0) {
         perror("Broadcast failed");
       }
+    }
+  }
+  pthread_mutex_unlock(&lock);
+}
+
+// Authunticate handler
+int authenticate(char *username, char *password) {
+  for (int i = 0; i < 3; i++) {
+    if (strcmp(users[i].username, username) == 0 &&
+        strcmp(users[i].password, password) == 0) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+// Private message handler
+void private_message(char *to_user, char *from_user, char *message) {
+  pthread_mutex_lock(&lock);
+  for (int i = 0; i < 100; i++) {
+    if (clients[i] && clients[i]->authenticated &&
+        strcmp(clients[i]->username, to_user) == 0) {
+      char formatted[BUFFER_SIZE];
+      snprintf(formatted, sizeof(formatted), "MSG %s %s\n", from_user, message);
+
+      if (send(clients[i]->socket, formatted, strlen(formatted), 0) < 0) {
+        perror("Send failed");
+      }
+      break;
     }
   }
   pthread_mutex_unlock(&lock);
@@ -79,7 +120,58 @@ void *handle_client(void *arg) {
 
     buffer[bytes_rcved] = '\0';
 
-    broadcast(buffer);
+    char command[BUFFER_SIZE], arg1[BUFFER_SIZE], arg2[BUFFER_SIZE];
+    sscanf(buffer, "%s %s %[^\n]", command, arg1, arg2);
+
+    printf("$ %s %s %s\n", command, arg1, arg2);
+
+    if (strcmp(command, "LOGIN") == 0) {
+      if (authenticate(arg1, arg2)) {
+        printf("YES\n");
+        strcpy(client->username, arg1);
+        client->authenticated = 1;
+        if (send(client->socket, "AUTH_OK\n", 8, 0) < 0) {
+          printf("send failed\n");
+        }
+      } else {
+        printf("NO\n");
+        if (send(client->socket, "AUTH_FAIL\n", 10, 0) < 0) {
+          printf("send failed\n");
+        }
+      }
+    } else if (strcmp(command, "BROADCAST") == 0) {
+      if (!client->authenticated) {
+        if (send(client->socket, "ERROR Not authenticated\n", 25, 0) < 0) {
+          printf("Send failed\n");
+        }
+        continue;
+      }
+      broadcast(arg1, client->username);
+    } else if (strcmp(command, "PRIVATE") == 0) {
+      if (!client->authenticated) {
+        if (send(client->socket, "ERROR Not authenticated\n", 25, 0) < 0) {
+          printf("Send failed\n");
+        }
+        continue;
+      }
+      private_message(arg1, client->username, arg2);
+    } else if (strcmp(command, "LIST") == 0) {
+      char response[BUFFER_SIZE] = "ONLINE ";
+      pthread_mutex_lock(&lock);
+      for (int i = 0; i < 100; i++) {
+        if (clients[i] && clients[i]->authenticated) {
+          strcat(response, clients[i]->username);
+          strcat(response, " ");
+        }
+      }
+      pthread_mutex_unlock(&lock);
+      strcat(response, "\n");
+      if (send(client->socket, response, strlen(response), 0) < 0) {
+        printf("send Failed\n");
+      }
+    } else {
+      printf("Invalid Command\n");
+    }
   }
 
   close(client->socket);

@@ -18,8 +18,10 @@ void *receive_handler(void *arg) {
 
   while (1) {
     int bytes = recv(client_socket, buffer, sizeof(buffer), 0);
-    if (bytes <= 0)
+    if (bytes <= 0) {
+      printf("Recv failed\n");
       break;
+    }
 
     buffer[bytes] = '\0';
     printf("%s", buffer);
@@ -65,13 +67,13 @@ int main() {
       break;
     }
 
-    bytes_received = recv(client_socket, buffer, BUFFER_SIZE - 1, 0);
-    if (bytes_received <= 0) {
-      printf("Server disconnected\n");
-      break;
-    }
+    // bytes_received = recv(client_socket, buffer, BUFFER_SIZE - 1, 0);
+    // if (bytes_received <= 0) {
+    //   printf("Server disconnected\n");
+    //   break;
+    // }
 
-    buffer[bytes_received] = '\0';
+    // buffer[bytes_received] = '\0';
   }
 
   close(client_socket);
