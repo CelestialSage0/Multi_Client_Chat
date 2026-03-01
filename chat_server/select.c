@@ -109,7 +109,7 @@ void accept_new_client(int server_socket) {
     }
   }
 
-  printf("New connection accepted\n");
+  printf("New connection on socket %d\n", client_socket);
 }
 
 void parse_and_route(int index, char *buffer) {
@@ -162,6 +162,8 @@ void handle_client_message(int i) {
   int bytes = recv(clients[i]->socket, buffer, BUFFER_SIZE - 1, 0);
 
   if (bytes <= 0) {
+    printf("Client %s disconnected (Socket %d)\n", clients[i]->username,
+           clients[i]->socket);
     close(clients[i]->socket);
     free(clients[i]);
     clients[i] = NULL;
