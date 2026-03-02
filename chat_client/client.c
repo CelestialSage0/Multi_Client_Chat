@@ -35,6 +35,10 @@ int main() {
   char buffer[BUFFER_SIZE];
   int bytes_received;
 
+  printf("Welcome\n1.Register\n2.Login\n");
+  int flag;
+  scanf("%d", &flag);
+
   char username[50];
   char password[50];
 
@@ -57,9 +61,14 @@ int main() {
     perror("Connection failed");
     exit(EXIT_FAILURE);
   }
-  sprintf(buffer, "AUTH %s %s\n", username, password);
+  if (flag == 2)
+    sprintf(buffer, "AUTH %s %s\n", username, password);
+  else
+    sprintf(buffer, "REGISTER %s %s\n", username, password);
 
-  send(disc_sock, buffer, strlen(buffer), 0);
+  if (send(disc_sock, buffer, strlen(buffer), 0) < 0) {
+    printf("Send failed\n");
+  }
   // Creating socket
   client_socket = socket(AF_INET, SOCK_STREAM, 0);
   if (client_socket < 0) {
@@ -69,10 +78,14 @@ int main() {
   int bytes = recv(disc_sock, buffer, sizeof(buffer) - 1, 0);
   buffer[bytes] = '\0';
 
-  if (strncmp(buffer, "AUTH_SUCCESS", 12) != 0) {
-    printf("Authentication failed\n");
-    close(disc_sock);
-    exit(0);
+  if (flag == 2) {
+    if (strncmp(buffer, "AUTH_SUCCESS", 12) != 0) {
+      printf("Authentication failed\n");
+      close(disc_sock);
+      exit(0);
+    }
+  } else {
+    printf("%s\n", buffer);
   }
   close(disc_sock);
 
