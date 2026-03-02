@@ -61,20 +61,18 @@ int main() {
     perror("Connection failed");
     exit(EXIT_FAILURE);
   }
-  if (flag == 2)
-    sprintf(buffer, "AUTH %s %s\n", username, password);
-  else
-    sprintf(buffer, "REGISTER %s %s\n", username, password);
+  struct timespec ts;
+  clock_gettime(CLOCK_MONOTONIC, &ts);
 
+  long long send_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;
+  if (flag == 2)
+    sprintf(buffer, "%lld AUTH %s %s\n", send_time, username, password);
+  else
+    sprintf(buffer, "%lld REGISTER %s %s\n", send_time, username, password);
   if (send(disc_sock, buffer, strlen(buffer), 0) < 0) {
     printf("Send failed\n");
   }
-  // Creating socket
-  client_socket = socket(AF_INET, SOCK_STREAM, 0);
-  if (client_socket < 0) {
-    perror("Socket creation failed");
-    exit(EXIT_FAILURE);
-  }
+
   int bytes = recv(disc_sock, buffer, sizeof(buffer) - 1, 0);
   buffer[bytes] = '\0';
 
@@ -88,6 +86,13 @@ int main() {
     printf("%s\n", buffer);
   }
   close(disc_sock);
+
+  // Creating socket
+  client_socket = socket(AF_INET, SOCK_STREAM, 0);
+  if (client_socket < 0) {
+    perror("Socket creation failed");
+    exit(EXIT_FAILURE);
+  }
 
   memset(&server_address, 0, sizeof(server_address));
   server_address.sin_family = AF_INET;
@@ -106,7 +111,10 @@ int main() {
   }
 
   char login_msg[100];
-  sprintf(login_msg, "LOGIN %s\n", username);
+  clock_gettime(CLOCK_MONOTONIC, &ts);
+  send_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;
+
+  sprintf(login_msg, "%lld LOGIN %s\n", send_time, username);
   if (send(client_socket, login_msg, strlen(login_msg), 0) < 0) {
     printf("Send failed\n");
   }
@@ -115,7 +123,23 @@ int main() {
   pthread_create(&recv_thread, NULL, receive_handler, &client_socket);
 
   while (fgets(buffer, BUFFER_SIZE, stdin) != NULL) {
-    if (send(client_socket, buffer, strlen(buffer), 0) < 0) {
+
+    // Remove trailing newline
+    buffer[strcspn(buffer, "\n")] = '\0';
+
+    // Get timestamp AFTER reading input
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+
+    long long send_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;
+
+    char new_buffer[BUFFER_SIZE];
+
+    // Prepend timestamp
+    snprintf(new_buffer, BUFFER_SIZE, "%lld %s", send_time, buffer);
+
+    if (send(client_socket, new_buffer, strlen(new_buffer), 0) < 0) {
+
       perror("Send failed");
       break;
     }

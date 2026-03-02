@@ -90,8 +90,12 @@ int main() {
         buffer[bytes] = '\0';
 
         char command[20], username[50], password[50];
-        sscanf(buffer, "%s %s %s", command, username, password);
+        long long timestamp;
+        sscanf(buffer, "%lld %s %s %s", &timestamp, command, username,
+               password);
 
+        printf("Discovery: %lld %s %s %s", timestamp, command, username,
+               password);
         if (strcmp(command, "REGISTER") == 0) {
 
           if (find_user(username) != -1) {

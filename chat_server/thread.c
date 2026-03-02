@@ -1,3 +1,4 @@
+#include "../monitoring/monitor.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <pthread.h>
@@ -110,9 +111,10 @@ void *handle_client(void *arg) {
     buffer[bytes_rcved] = '\0';
 
     char command[BUFFER_SIZE], arg1[BUFFER_SIZE], arg2[BUFFER_SIZE];
-    sscanf(buffer, "%s %s %[^\n]", command, arg1, arg2);
+    long long timestamp;
+    sscanf(buffer, "%lld %s %s %[^\n]", &timestamp, command, arg1, arg2);
 
-    printf("$ %s %s %s\n", command, arg1, arg2);
+    printf("$ %lld %s %s %s\n", timestamp, command, arg1, arg2);
 
     if (strcmp(command, "LOGIN") == 0) {
       client->authenticated = 1;
@@ -163,6 +165,7 @@ void *handle_client(void *arg) {
 }
 
 int main() {
+  start_monitor("../logs/metrics_thread.txt");
   int server_socket, client_socket;
   struct sockaddr_in server_address, client_address;
   socklen_t client_address_len;

@@ -1,3 +1,4 @@
+#include "../monitoring/monitor.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <stdio.h>
@@ -102,13 +103,11 @@ void accept_new_client(int server_socket) {
 }
 
 void parse_and_route(int index, char *buffer) {
-  char command[32];
-  char arg1[BUFFER_SIZE];
-  char arg2[BUFFER_SIZE];
+  char command[BUFFER_SIZE], arg1[BUFFER_SIZE], arg2[BUFFER_SIZE];
+  long long timestamp;
+  sscanf(buffer, "%lld %s %s %[^\n]", &timestamp, command, arg1, arg2);
 
-  sscanf(buffer, "%s %s %[^\n]", command, arg1, arg2);
-
-  printf("$ cmd:%s arg1:%s arg2:%s\n", command, arg1, arg2);
+  printf("$ %lld %s %s %s\n", timestamp, command, arg1, arg2);
 
   if (strcmp(command, "LOGIN") == 0) {
     clients[index]->authenticated = 1;
@@ -171,6 +170,7 @@ void handle_client_message(int i) {
 }
 
 int main() {
+  start_monitor("../logs/metrics_select.txt");
   int server_socket, client_socket;
   struct sockaddr_in server_address, client_address;
   socklen_t client_address_len;
