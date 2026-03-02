@@ -26,21 +26,30 @@ static double get_cpu_usage() {
   if (!f)
     return 0.0;
 
-  long long utime, stime;
-  char buffer[2048];
+  int pid;
+  char comm[256];
+  char state;
 
-  fgets(buffer, sizeof(buffer), f);
+  // Read pid, command name, and state
+  if (fscanf(f, "%d %255s %c", &pid, comm, &state) != 3) {
+    fclose(f);
+    return 0.0;
+  }
+
+  // Skip next 11 fields
+  for (int i = 0; i < 11; i++)
+    fscanf(f, "%*s");
+
+  long long utime, stime;
+  if (fscanf(f, "%lld %lld", &utime, &stime) != 2) {
+    fclose(f);
+    return 0.0;
+  }
+
   fclose(f);
 
-  /* Extract utime and stime (14th & 15th fields) */
-  sscanf(buffer,
-         "%*d %*s %*c %*d %*d %*d %*d %*d "
-         "%*u %*u %*u %*u %*u "
-         "%lld %lld",
-         &utime, &stime);
-
-  long long proc_time = utime + stime;
-  long long wall_time = current_time_ms();
+  long long proc_time = utime + stime;     // ticks
+  long long wall_time = current_time_ms(); // ms
 
   double cpu_percent = 0.0;
 
@@ -48,9 +57,13 @@ static double get_cpu_usage() {
     long long delta_proc = proc_time - last_proc_time;
     long long delta_wall = wall_time - last_wall_time;
 
-    if (delta_wall > 0) {
-      cpu_percent = (double)delta_proc / delta_wall * 100.0;
-    }
+    long hz = sysconf(_SC_CLK_TCK);                  // ticks/sec
+    double delta_proc_sec = (double)delta_proc / hz; // seconds of CPU
+    double delta_wall_sec =
+        (double)delta_wall / 1000.0; // seconds of wall clock
+
+    if (delta_wall_sec > 0)
+      cpu_percent = (delta_proc_sec / delta_wall_sec) * 100.0;
   }
 
   last_proc_time = proc_time;
@@ -58,7 +71,6 @@ static double get_cpu_usage() {
 
   return cpu_percent;
 }
-
 /* ============================= */
 /* Memory Usage (VmRSS)          */
 /* ============================= */
@@ -101,7 +113,7 @@ static void *monitor_function(void *arg) {
     fprintf(f, "%lld,%.2f,%ld\n", timestamp, cpu, vmrss);
     fflush(f);
 
-    sleep(5);
+    sleep(1);
   }
 
   fclose(f);

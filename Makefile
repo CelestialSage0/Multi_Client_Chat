@@ -21,14 +21,20 @@ $(MONITOR_OBJ): $(MONITOR_SRC) monitoring/monitor.h
 # Thread server
 thread: $(MONITOR_OBJ)
 	$(CC) $(CFLAGS) $(THREAD_SRC) $(MONITOR_OBJ) -o chat_server/thread_server
+	touch logs/metrics_thread.txt
+	touch logs/latency.txt
 
 # Fork server
 fork: $(MONITOR_OBJ)
 	$(CC) $(CFLAGS) $(FORK_SRC) $(MONITOR_OBJ) -o chat_server/fork_server
+	touch logs/metrics_fork.txt
+	touch logs/latency.txt
 
 # Select server
 select: $(MONITOR_OBJ)
 	$(CC) $(CFLAGS) $(SELECT_SRC) $(MONITOR_OBJ) -o chat_server/select_server
+	touch logs/metrics_select.txt
+	touch logs/latency.txt
 
 # Client
 client:
@@ -46,4 +52,5 @@ clean:
 	chat_server/select_server \
 	chat_client/client \
 	discovery_server/discovery \
-	monitoring/monitor.o
+	monitoring/monitor.o \
+	logs/*.txt

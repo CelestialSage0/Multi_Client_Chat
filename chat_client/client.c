@@ -44,12 +44,8 @@ void *receive_handler(void *arg) {
       long long recv_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;
 
       double latency_ms = (recv_time - send_time) / 1e6;
-      printf("send_time: %lld\n", send_time);
-      printf("recv_time: %lld\n", recv_time);
 
-      printf("Latency: %.3f ms\n", latency_ms);
-
-      FILE *lat_file = fopen("../logs/latency_thread.txt", "a");
+      FILE *lat_file = fopen("./logs/latency.txt", "a");
       if (!lat_file) {
         perror("fopen failed");
         exit(1);
