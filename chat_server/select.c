@@ -48,12 +48,12 @@ void remove_client(int socket) {
 }
 
 // Broadcast handler
-void broadcast(char *message, char *from_user) {
+void broadcast(char *message, char *from_user, long long timestamp) {
   for (int i = 0; i < 100; i++) {
     if (clients[i] && clients[i]->authenticated) {
       char formatted[BUFFER_SIZE];
-      snprintf(formatted, sizeof(formatted), "BROADCAST: %s %s\n", from_user,
-               message);
+      snprintf(formatted, sizeof(formatted), "%lld BROADCAST: %s %s\n",
+               timestamp, from_user, message);
 
       if (send(clients[i]->socket, formatted, strlen(formatted), 0) < 0) {
         perror("Broadcast failed");
@@ -63,12 +63,14 @@ void broadcast(char *message, char *from_user) {
 }
 
 // Private message handler
-void private_message(char *to_user, char *from_user, char *message) {
+void private_message(char *to_user, char *from_user, char *message,
+                     long long timestamp) {
   for (int i = 0; i < 100; i++) {
     if (clients[i] && clients[i]->authenticated &&
         strcmp(clients[i]->username, to_user) == 0) {
       char formatted[BUFFER_SIZE];
-      snprintf(formatted, sizeof(formatted), "MSG %s %s\n", from_user, message);
+      snprintf(formatted, sizeof(formatted), "%lld MSG %s %s\n", timestamp,
+               from_user, message);
 
       if (send(clients[i]->socket, formatted, strlen(formatted), 0) < 0) {
         perror("Send failed");
@@ -123,9 +125,9 @@ void parse_and_route(int index, char *buffer) {
       }
       return;
     }
-    broadcast(arg1, clients[index]->username);
+    broadcast(arg1, clients[index]->username, timestamp);
   } else if (strcmp(command, "PRIVATE") == 0) {
-    private_message(arg1, clients[index]->username, arg2);
+    private_message(arg1, clients[index]->username, arg2, timestamp);
   } else if (strcmp(command, "LIST") == 0) {
     char response[BUFFER_SIZE] = "ONLINE ";
     for (int i = 0; i < 100; i++) {

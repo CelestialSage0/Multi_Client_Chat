@@ -24,7 +24,39 @@ void *receive_handler(void *arg) {
     }
 
     buffer[bytes] = '\0';
-    printf("%s", buffer);
+    long long send_time;
+    char *text_part;
+    char *endptr;
+
+    // 1. Extract the number (base 10)
+    // endptr will point to the character immediately after the number
+    send_time = strtoll(buffer, &endptr, 10);
+    while (*endptr == ' ') {
+      endptr++;
+    }
+    text_part = endptr;
+    printf("%s", text_part);
+    if (strncmp(text_part, "MSG", 3) == 0 ||
+        strncmp(text_part, "BROADCAST", 9) == 0) {
+      struct timespec ts;
+      clock_gettime(CLOCK_MONOTONIC, &ts);
+
+      long long recv_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;
+
+      double latency_ms = (recv_time - send_time) / 1e6;
+      printf("send_time: %lld\n", send_time);
+      printf("recv_time: %lld\n", recv_time);
+
+      printf("Latency: %.3f ms\n", latency_ms);
+
+      FILE *lat_file = fopen("../logs/latency_thread.txt", "a");
+      if (!lat_file) {
+        perror("fopen failed");
+        exit(1);
+      }
+      fprintf(lat_file, "%.3f\n", latency_ms);
+      fflush(lat_file);
+    }
   }
   return NULL;
 }
