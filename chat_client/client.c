@@ -35,12 +35,46 @@ int main() {
   char buffer[BUFFER_SIZE];
   int bytes_received;
 
+  char username[50];
+  char password[50];
+
+  printf("Username: ");
+  scanf("%s", username);
+
+  printf("Password: ");
+  scanf("%s", password);
+
+  // Connecting to discovery server
+  int disc_sock = socket(AF_INET, SOCK_STREAM, 0);
+
+  struct sockaddr_in disc_addr;
+  disc_addr.sin_family = AF_INET;
+  disc_addr.sin_port = htons(8080);
+  disc_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+
+  if (connect(disc_sock, (struct sockaddr *)&disc_addr, sizeof(disc_addr)) <
+      0) {
+    perror("Connection failed");
+    exit(EXIT_FAILURE);
+  }
+  sprintf(buffer, "AUTH %s %s\n", username, password);
+
+  send(disc_sock, buffer, strlen(buffer), 0);
   // Creating socket
   client_socket = socket(AF_INET, SOCK_STREAM, 0);
   if (client_socket < 0) {
     perror("Socket creation failed");
     exit(EXIT_FAILURE);
   }
+  int bytes = recv(disc_sock, buffer, sizeof(buffer) - 1, 0);
+  buffer[bytes] = '\0';
+
+  if (strncmp(buffer, "AUTH_SUCCESS", 12) != 0) {
+    printf("Authentication failed\n");
+    close(disc_sock);
+    exit(0);
+  }
+  close(disc_sock);
 
   memset(&server_address, 0, sizeof(server_address));
   server_address.sin_family = AF_INET;
@@ -56,6 +90,12 @@ int main() {
               sizeof(server_address)) < 0) {
     perror("Connection failed");
     exit(EXIT_FAILURE);
+  }
+
+  char login_msg[100];
+  sprintf(login_msg, "LOGIN %s\n", username);
+  if (send(client_socket, login_msg, strlen(login_msg), 0) < 0) {
+    printf("Send failed\n");
   }
 
   pthread_t recv_thread;

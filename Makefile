@@ -19,5 +19,8 @@ fork: client
 select: client
 	$(CC) chat_server/select.c -o chat_server/select_server
 
+discovery:
+	$(CC) discovery_server/discovery.c -o discovery_server/discovery
+
 clean:
 	rm -f chat_server/thread_server chat_server/fork_server chat_server/select_server chat_client/client

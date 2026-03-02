@@ -69,17 +69,6 @@ void broadcast(char *message, char *from_user) {
   pthread_mutex_unlock(&lock);
 }
 
-// Authunticate handler
-int authenticate(char *username, char *password) {
-  for (int i = 0; i < 3; i++) {
-    if (strcmp(users[i].username, username) == 0 &&
-        strcmp(users[i].password, password) == 0) {
-      return 1;
-    }
-  }
-  return 0;
-}
-
 // Private message handler
 void private_message(char *to_user, char *from_user, char *message) {
   pthread_mutex_lock(&lock);
@@ -126,18 +115,10 @@ void *handle_client(void *arg) {
     printf("$ %s %s %s\n", command, arg1, arg2);
 
     if (strcmp(command, "LOGIN") == 0) {
-      if (authenticate(arg1, arg2)) {
-        printf("YES\n");
-        strcpy(client->username, arg1);
-        client->authenticated = 1;
-        if (send(client->socket, "AUTH_OK\n", 8, 0) < 0) {
-          printf("send failed\n");
-        }
-      } else {
-        printf("NO\n");
-        if (send(client->socket, "AUTH_FAIL\n", 10, 0) < 0) {
-          printf("send failed\n");
-        }
+      client->authenticated = 1;
+      strcpy(client->username, arg1);
+      if (send(client->socket, "LOGIN_SUCCESS\n", 14, 0) < 0) {
+        printf("Send failed\n");
       }
     } else if (strcmp(command, "BROADCAST") == 0) {
       if (!client->authenticated) {

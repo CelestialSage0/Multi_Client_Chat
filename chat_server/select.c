@@ -61,17 +61,6 @@ void broadcast(char *message, char *from_user) {
   }
 }
 
-// Authunticate handler
-int authenticate(char *username, char *password) {
-  for (int i = 0; i < 3; i++) {
-    if (strcmp(users[i].username, username) == 0 &&
-        strcmp(users[i].password, password) == 0) {
-      return 1;
-    }
-  }
-  return 0;
-}
-
 // Private message handler
 void private_message(char *to_user, char *from_user, char *message) {
   for (int i = 0; i < 100; i++) {
@@ -122,12 +111,10 @@ void parse_and_route(int index, char *buffer) {
   printf("$ cmd:%s arg1:%s arg2:%s\n", command, arg1, arg2);
 
   if (strcmp(command, "LOGIN") == 0) {
-    if (authenticate(arg1, arg2)) {
-      strcpy(clients[index]->username, arg1);
-      clients[index]->authenticated = 1;
-      send(clients[index]->socket, "AUTH_OK\n", 8, 0);
-    } else {
-      send(clients[index]->socket, "AUTH_FAIL\n", 10, 0);
+    clients[index]->authenticated = 1;
+    strcpy(clients[index]->username, arg1);
+    if (send(clients[index]->socket, "LOGIN_SUCCESS\n", 14, 0) < 0) {
+      printf("Send failed\n");
     }
   } else if (strcmp(command, "BROADCAST") == 0) {
     if (!clients[index]->authenticated) {
