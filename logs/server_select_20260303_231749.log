@@ -1,0 +1,90 @@
+Select-based server listening on port 8000
+New connection on socket 5
+$ 17946386303543 LOGIN bot0 
+$ 17946386422598 LOGIN  
+New connection on socket 6
+$ 17947138057009 LOGIN bot1 
+$ 17947138173466 LOGIN  
+New connection on socket 7
+$ 17947890528350 LOGIN bot2 
+$ 17947890723597 LOGIN  
+New connection on socket 8
+$ 17948642143502 LOGIN bot3 
+$ 17948642263693 LOGIN  
+New connection on socket 9
+$ 17949395208842 LOGIN bot4 
+$ 17949395363708 LOGIN  
+New connection on socket 10
+$ 17950146920214 LOGIN bot5 
+$ 17950146969173 LOGIN  
+New connection on socket 11
+$ 17950899810392 LOGIN bot6 
+$ 17950899968056 LOGIN  
+New connection on socket 12
+$ 17951651402193 LOGIN bot7 
+$ 17951651506851 LOGIN  
+New connection on socket 13
+$ 17952403825058 LOGIN bot8 
+$ 17952404041337 LOGIN  
+New connection on socket 14
+$ 17953155813038 LOGIN bot9 
+$ 17953155883032 LOGIN  
+Client  disconnected (Socket 5)
+Client  disconnected (Socket 6)
+Client  disconnected (Socket 7)
+Client  disconnected (Socket 8)
+Client  disconnected (Socket 9)
+Client  disconnected (Socket 10)
+Client  disconnected (Socket 11)
+Client  disconnected (Socket 12)
+Client  disconnected (Socket 13)
+Client  disconnected (Socket 14)
+New connection on socket 5
+$ 17954922148314 LOGIN bot0 
+$ 17954922332166 LOGIN  
+New connection on socket 6
+$ 17954924999965 LOGIN bot1 
+$ 17954925217270 LOGIN  
+New connection on socket 7
+New connection on socket 8
+$ 17954926314102 LOGIN bot2 
+$ 17954926345642 LOGIN bot3 
+$ 17954926468657 LOGIN  
+$ 17954926508619 LOGIN  
+New connection on socket 9
+$ 17954928680246 LOGIN bot8 
+$ 17954928803831 LOGIN  
+New connection on socket 10
+$ 17954930699023 LOGIN bot6 
+New connection on socket 11
+$ 17954930781621 LOGIN bot9 
+New connection on socket 12
+$ 17954930808955 LOGIN bot7 
+$ 17954930837745 LOGIN  
+New connection on socket 13
+$ 17954930911571 LOGIN  
+New connection on socket 14
+$ 17954930967405 LOGIN  
+$ 17954930921259 LOGIN bot4 
+$ 17954930942102 LOGIN bot5 
+$ 17954931089743 LOGIN  
+$ 17954931139828 LOGIN  
+$ 17955722019536 BROADCAST hello_from_bot0_msg0 
+$ 17955722094436 BROADCAST hello_from_bot0_msg117955722099957 BROADCAST hello_from_bot0_msg217955722231611 BROADCAST hello_from_bot0_msg317955722243048 BROADCAST hello_from_bot0_msg417955722361533 BROADCAST hello_from_bot0_msg5
+$ 17955722403023 BROADCAST hello_from_bot0_msg617955722511711 BROADCAST hello_from_bot0_msg7
+$ 17955722731567 BROADCAST hello_from_bot0_msg817955722797873 BROADCAST hello_from_bot0_msg917955722858445 BROADCAST hello_from_bot0_msg10
+$ 17955722920318 BROADCAST hello_from_bot0_msg1117955722982766 BROADCAST hello_from_bot0_msg1217955723036073 BROADCAST hello_from_bot0_msg13
+$ 17955723185832 BROADCAST hello_from_bot0_msg1417955723199853 BROADCAST hello_from_bot0_msg1517955723204445 BROADCAST hello_from_bot0_msg1617955723272774 BROADCAST hello_from_bot0_msg1717955723352815 BROADCAST hello_from_bot0_msg18
+$ 17955723398843 BROADCAST hello_from_bot0_msg1917955723456547 BROADCAST hello_from_bot0_msg2017955723516146 BROADCAST hello_from_bot0_msg2117955723577164 BROADCAST hello_from_bot0_msg22
+$ 17955723638986 BROADCAST hello_from_bot0_msg2317955723699781 BROADCAST hello_from_bot0_msg2417955723760704 BROADCAST hello_from_bot0_msg25
+$ 17955723822801 BROADCAST hello_from_bot0_msg26 
+$ 17955724076788 BROADCAST hello_from_bot0_msg2717955724149868 BROADCAST hello_from_bot0_msg2817955724212825 BROADCAST hello_from_bot0_msg29
+Client  disconnected (Socket 5)
+$ 17955724823955 BROADCAST hello_from_bot1_msg0 
+$ 17955724893316 BROADCAST hello_from_bot1_msg1 
+$ 17955724993754 BROADCAST hello_from_bot1_msg217955725031589 BROADCAST hello_from_bot1_msg3
+$ 17955725180250 BROADCAST hello_from_bot1_msg417955725195092 BROADCAST hello_from_bot1_msg517955725246473 BROADCAST hello_from_bot1_msg6
+$ 17955725305864 BROADCAST hello_from_bot1_msg717955725366385 BROADCAST hello_from_bot1_msg817955725427080 BROADCAST hello_from_bot1_msg9
+$ 17955725572981 BROADCAST hello_from_bot1_msg10 
+$ 17955725634429 BROADCAST hello_from_bot1_msg1117955725693473 BROADCAST hello_from_bot1_msg1217955725752583 BROADCAST hello_from_bot1_msg13
+$ 1795

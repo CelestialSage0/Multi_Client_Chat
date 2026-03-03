@@ -50,7 +50,11 @@ LABELS       = {"fork": "Fork", "thread": "Thread", "select": "Non-blocking (sel
 def load_latency(server_type: str):
     """Load latency values (ms) from ../logs/latency_<type>.txt"""
     # nonblocking server writes metrics_select.txt but latency as nonblocking
-    fname = os.path.join(LOGS_DIR, f"latency_{server_type}.txt")
+    for suffix in [f"{server_type}_load", server_type]:
+        fname = os.path.join(LOGS_DIR, f"latency_{suffix}_load.txt")
+        if os.path.exists(fname):
+            break
+    fname = os.path.join(LOGS_DIR, f"latency_{server_type}_load.txt")
     if not os.path.exists(fname):
         print(f"  [skip] {fname} not found")
         return []

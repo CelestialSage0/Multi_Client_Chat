@@ -1,0 +1,667 @@
+══════════════════════════════════════════════
+  Benchmark Suite
+  Started : Tue Mar  3 11:17:49 PM IST 2026
+  Report  : ./logs/benchmark_report_20260303_231749.txt
+══════════════════════════════════════════════
+
+══════════════════════════════════════════════
+  Starting Discovery Server
+══════════════════════════════════════════════
+  Discovery PID : 171685
+  Discovery log : ./logs/discovery_20260303_231749.log
+  [ready] discovery server on port 8080
+
+══════════════════════════════════════════════
+  [Fork Server]  Starting...
+══════════════════════════════════════════════
+  Server PID : 171689
+  Server log : ./logs/server_fork_20260303_231749.log
+  [ready] Fork server on port 8000
+
+  ── Load Test (10 bots × 30 messages) ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 30 messages | server=fork
+------------------------------------------------------------
+  [bot0] sent 30 messages
+  [bot2] sent 30 messages
+  [bot3] sent 30 messages
+  [bot1] sent 30 messages
+  [bot4] sent 30 messages
+  [bot6] sent 30 messages
+  [bot5] sent 30 messages
+  [bot7] sent 30 messages
+  [bot9] sent 30 messages
+  [bot8] sent 30 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 300
+  Wall time           : 1.02s
+  Throughput          : 295.5 msg/s
+
+fork
+[*] Latency data saved to ./logs/latency_fork_load.txt
+
+── Latency Report (fork) ──────────────────
+  Samples : 198
+  Min     : 0.428 ms
+  Max     : 1.507 ms
+  Mean    : 0.750 ms
+  Median  : 0.707 ms
+  Stdev   : 0.202 ms
+[*] Cleared ./logs/latency.txt for next run.
+
+  [OK] Load test complete
+
+  ── Stress Test (ramp 2 → 12 clients) ──
+[STRESS TEST] server=fork
+============================================================
+
+── Level: 2 clients ──
+[*] Registering 2 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 2 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 30
+  Wall time           : 1.01s
+  Throughput          : 29.8 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 4 clients ──
+[*] Registering 4 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 4 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot1] sent 15 messages
+  [bot3] sent 15 messages
+  [bot0] sent 15 messages
+  [bot2] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 60
+  Wall time           : 1.01s
+  Throughput          : 59.5 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 6 clients ──
+[*] Registering 6 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 6 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot4] sent 15 messages
+  [bot2] sent 15 messages
+  [bot3] sent 15 messages
+  [bot5] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 90
+  Wall time           : 1.01s
+  Throughput          : 89.1 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 8 clients ──
+[*] Registering 8 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 8 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot2] sent 15 messages
+  [bot0] sent 15 messages
+  [bot1] sent 15 messages
+  [bot3] sent 15 messages
+  [bot6] sent 15 messages
+  [bot4] sent 15 messages
+  [bot5] sent 15 messages
+  [bot7] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 120
+  Wall time           : 1.01s
+  Throughput          : 118.5 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 10 clients ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot1] sent 15 messages
+  [bot2] sent 15 messages
+  [bot3] sent 15 messages
+  [bot5] sent 15 messages
+  [bot6] sent 15 messages
+  [bot9] sent 15 messages
+  [bot4] sent 15 messages
+  [bot8] sent 15 messages
+  [bot7] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 150
+  Wall time           : 1.01s
+  Throughput          : 148.6 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 12 clients ──
+[*] Registering 12 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 12 bots × 15 messages | server=fork
+------------------------------------------------------------
+  [bot1] sent 15 messages
+  [bot0] sent 15 messages
+  [bot3] sent 15 messages
+  [bot4] sent 15 messages
+  [bot2] sent 15 messages
+  [bot5] sent 15 messages
+  [bot6] sent 15 messages
+  [bot7] sent 15 messages
+  [bot8] sent 15 messages
+  [bot10] sent 15 messages
+  [bot11] sent 15 messages
+  [bot9] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 180
+  Wall time           : 1.02s
+  Throughput          : 177.3 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+[STRESS TEST COMPLETE] Summary saved to ./logs/stress_summary_fork.txt
+
+   Clients   Throughput (msg/s)   Wall Time (s)
+--------------------------------------------------
+         2                29.83            1.01
+         4                59.55            1.01
+         6                89.08            1.01
+         8               118.51            1.01
+        10               148.59            1.01
+        12               177.26            1.02
+fork
+[!] Latency file is empty.
+  [OK] Stress test complete
+  [already gone] Fork server (PID 171689)
+  Sleeping 3s before next server...
+
+══════════════════════════════════════════════
+  [Thread Server]  Starting...
+══════════════════════════════════════════════
+  Server PID : 172514
+  Server log : ./logs/server_thread_20260303_231749.log
+  [ready] Thread server on port 8000
+
+  ── Load Test (10 bots × 30 messages) ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 30 messages | server=thread
+------------------------------------------------------------
+  [bot0] sent 30 messages
+  [bot1] sent 30 messages
+  [bot2] sent 30 messages
+  [bot3] sent 30 messages
+  [bot4] sent 30 messages
+  [bot5] sent 30 messages
+  [bot8] sent 30 messages
+  [bot9] sent 30 messages
+  [bot7] sent 30 messages
+  [bot6] sent 30 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 300
+  Wall time           : 1.01s
+  Throughput          : 295.7 msg/s
+
+thread
+[*] Latency data saved to ./logs/latency_thread_load.txt
+
+── Latency Report (thread) ──────────────────
+  Samples : 217
+  Min     : 0.147 ms
+  Max     : 3.760 ms
+  Mean    : 0.814 ms
+  Median  : 0.427 ms
+  Stdev   : 0.790 ms
+[*] Cleared ./logs/latency.txt for next run.
+
+  [OK] Load test complete
+
+  ── Stress Test (ramp 2 → 12 clients) ──
+[STRESS TEST] server=thread
+============================================================
+
+── Level: 2 clients ──
+[*] Registering 2 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 2 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 30
+  Wall time           : 1.01s
+  Throughput          : 29.8 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 4 clients ──
+[*] Registering 4 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 4 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot3] sent 15 messages
+  [bot1] sent 15 messages
+  [bot0] sent 15 messages
+  [bot2] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 60
+  Wall time           : 1.01s
+  Throughput          : 59.5 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 6 clients ──
+[*] Registering 6 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 6 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot2] sent 15 messages
+  [bot1] sent 15 messages
+  [bot3] sent 15 messages
+  [bot4] sent 15 messages
+  [bot0] sent 15 messages
+  [bot5] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 90
+  Wall time           : 1.01s
+  Throughput          : 88.9 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 8 clients ──
+[*] Registering 8 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 8 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot2] sent 15 messages
+  [bot1] sent 15 messages
+  [bot4] sent 15 messages
+  [bot5] sent 15 messages
+  [bot6] sent 15 messages
+  [bot3] sent 15 messages
+  [bot7] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 120
+  Wall time           : 1.01s
+  Throughput          : 118.5 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 10 clients ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot2] sent 15 messages
+  [bot3] sent 15 messages
+  [bot4] sent 15 messages
+  [bot5] sent 15 messages
+  [bot6] sent 15 messages
+  [bot7] sent 15 messages
+  [bot8] sent 15 messages
+  [bot1] sent 15 messages
+  [bot9] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 150
+  Wall time           : 1.01s
+  Throughput          : 148.1 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 12 clients ──
+[*] Registering 12 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 12 bots × 15 messages | server=thread
+------------------------------------------------------------
+  [bot3] sent 15 messages
+  [bot5] sent 15 messages
+  [bot7] sent 15 messages
+  [bot2] sent 15 messages
+  [bot4] sent 15 messages
+  [bot0] sent 15 messages
+  [bot6] sent 15 messages
+  [bot9] sent 15 messages
+  [bot8] sent 15 messages
+  [bot11] sent 15 messages
+  [bot10] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 180
+  Wall time           : 1.02s
+  Throughput          : 177.3 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+[STRESS TEST COMPLETE] Summary saved to ./logs/stress_summary_thread.txt
+
+   Clients   Throughput (msg/s)   Wall Time (s)
+--------------------------------------------------
+         2                29.83            1.01
+         4                59.50            1.01
+         6                88.93            1.01
+         8               118.46            1.01
+        10               148.10            1.01
+        12               177.28            1.02
+thread
+[!] Latency file is empty.
+  [OK] Stress test complete
+  [already gone] Thread server (PID 172514)
+  Sleeping 3s before next server...
+
+══════════════════════════════════════════════
+  [Select Server]  Starting...
+══════════════════════════════════════════════
+  Server PID : 173298
+  Server log : ./logs/server_select_20260303_231749.log
+  [ready] Select server on port 8000
+
+  ── Load Test (10 bots × 30 messages) ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 30 messages | server=select
+------------------------------------------------------------
+  [bot0] sent 30 messages
+  [bot1] sent 30 messages
+  [bot3] sent 30 messages
+  [bot2] sent 30 messages
+  [bot8] sent 30 messages
+  [bot6] sent 30 messages
+  [bot9] sent 30 messages
+  [bot5] sent 30 messages
+  [bot7] sent 30 messages
+  [bot4] sent 30 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 300
+  Wall time           : 1.02s
+  Throughput          : 295.5 msg/s
+
+select
+[*] Latency data saved to ./logs/latency_select_load.txt
+
+── Latency Report (select) ──────────────────
+  Samples : 224
+  Min     : 0.099 ms
+  Max     : 0.780 ms
+  Mean    : 0.481 ms
+  Median  : 0.481 ms
+  Stdev   : 0.143 ms
+[*] Cleared ./logs/latency.txt for next run.
+
+  [OK] Load test complete
+
+  ── Stress Test (ramp 2 → 12 clients) ──
+[STRESS TEST] server=select
+============================================================
+
+── Level: 2 clients ──
+[*] Registering 2 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 2 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 30
+  Wall time           : 1.01s
+  Throughput          : 29.8 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 4 clients ──
+[*] Registering 4 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 4 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot3] sent 15 messages
+  [bot1] sent 15 messages
+  [bot2] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 60
+  Wall time           : 1.00s
+  Throughput          : 59.7 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 6 clients ──
+[*] Registering 6 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 6 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot2] sent 15 messages
+  [bot3] sent 15 messages
+  [bot5] sent 15 messages
+  [bot4] sent 15 messages
+  [bot1] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 90
+  Wall time           : 1.01s
+  Throughput          : 88.9 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 8 clients ──
+[*] Registering 8 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 8 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot0] sent 15 messages
+  [bot3] sent 15 messages
+  [bot5] sent 15 messages
+  [bot4] sent 15 messages
+  [bot1] sent 15 messages
+  [bot2] sent 15 messages
+  [bot7] sent 15 messages
+  [bot6] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 120
+  Wall time           : 1.01s
+  Throughput          : 118.4 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 10 clients ──
+[*] Registering 10 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 10 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot1] sent 15 messages
+  [bot2] sent 15 messages
+  [bot0] sent 15 messages
+  [bot3] sent 15 messages
+  [bot4] sent 15 messages
+  [bot6] sent 15 messages
+  [bot5] sent 15 messages
+  [bot7] sent 15 messages
+  [bot9] sent 15 messages
+  [bot8] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 150
+  Wall time           : 1.01s
+  Throughput          : 147.9 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+── Level: 12 clients ──
+[*] Registering 12 bot accounts...
+[*] Registration done.
+
+[LOAD TEST] 12 bots × 15 messages | server=select
+------------------------------------------------------------
+  [bot1] sent 15 messages
+  [bot0] sent 15 messages
+  [bot5] sent 15 messages
+  [bot4] sent 15 messages
+  [bot3] sent 15 messages
+  [bot2] sent 15 messages
+  [bot8] sent 15 messages
+  [bot6] sent 15 messages
+  [bot7] sent 15 messages
+  [bot10] sent 15 messages
+  [bot11] sent 15 messages
+  [bot9] sent 15 messages
+
+[LOAD TEST DONE]
+  Total messages sent : 180
+  Wall time           : 1.02s
+  Throughput          : 177.2 msg/s
+
+  Sleeping 5s before next level (let server stabilise)...
+
+[STRESS TEST COMPLETE] Summary saved to ./logs/stress_summary_select.txt
+
+   Clients   Throughput (msg/s)   Wall Time (s)
+--------------------------------------------------
+         2                29.83            1.01
+         4                59.73            1.00
+         6                88.95            1.01
+         8               118.41            1.01
+        10               147.91            1.01
+        12               177.17            1.02
+select
+[!] Latency file is empty.
+  [OK] Stress test complete
+  [already gone] Select server (PID 173298)
+  Sleeping 3s before next server...
+
+  [stopped] discovery server (PID 171685)
+
+══════════════════════════════════════════════
+  Generating Plots → ./graphs/
+══════════════════════════════════════════════
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser error: gtk.css:4970:12-17: "shade" is not a valid color name.
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser error: gtk.css:5030:12-17: "shade" is not a valid color name.
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser error: gtk.css:5057:12-15: "mix" is not a valid color name.
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser error: gtk.css:5061:12-15: "mix" is not a valid color name.
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser warning: gtk.css:5262:3-5263:1: Expected ';' at end of block
+
+(process:174041): Gtk-WARNING **: 23:22:08.934: Theme parser error: gtk.css:5293:3-19: No property named "-gtk-icon-effect"
+/home/celestial_sage/CS3205/Assignments/Assignment_2/./scripts/plot.py:217: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend()
+
+(process:174041): Gsk-WARNING **: 23:22:09.320: The new GL renderer has been renamed to gl. Try GSK_RENDERER=help
+============================================================
+  Benchmark Results Visualiser
+  Reading logs from : /home/celestial_sage/CS3205/Assignments/Assignment_2/logs
+  Saving graphs to  : /home/celestial_sage/CS3205/Assignments/Assignment_2/graphs
+============================================================
+
+[Plot 1] Latency distribution...
+  [skip] ./logs/latency_fork.txt not found
+  [skip] ./logs/latency_thread.txt not found
+  [skip] ./logs/latency_select.txt not found
+  Saved → ./graphs/latency_distribution.png
+
+[Plot 2] Latency overlay comparison...
+  [skip] ./logs/latency_fork.txt not found
+  [skip] ./logs/latency_thread.txt not found
+  [skip] ./logs/latency_select.txt not found
+  Saved → ./graphs/latency_overlay.png
+
+[Plot 3] CPU usage over time...
+  Loaded 10 metric samples from ./logs/metrics_fork.txt
+  Loaded 10 metric samples from ./logs/metrics_thread.txt
+  Loaded 10 metric samples from ./logs/metrics_select.txt
+  Saved → ./graphs/cpu_over_time.png
+
+[Plot 4] Memory usage over time...
+  Loaded 10 metric samples from ./logs/metrics_fork.txt
+  Loaded 10 metric samples from ./logs/metrics_thread.txt
+  Loaded 10 metric samples from ./logs/metrics_select.txt
+  Saved → ./graphs/memory_over_time.png
+
+[Plot 5] Throughput vs number of clients (stress test)...
+  Saved → ./graphs/throughput_vs_clients.png
+
+[Plot 6] CPU vs number of clients...
+  Loaded 10 metric samples from ./logs/metrics_fork.txt
+  Loaded 10 metric samples from ./logs/metrics_thread.txt
+  Loaded 10 metric samples from ./logs/metrics_select.txt
+  Saved → ./graphs/cpu_memory_vs_clients.png
+
+✓ All plots done.
+  [OK] Plots saved to ./graphs/
+
+══════════════════════════════════════════════
+  Benchmark Complete
+  Finished : Tue Mar  3 11:22:34 PM IST 2026
+
+  Output files:
+    Full report   : ./logs/benchmark_report_20260303_231749.txt
+    Server logs   : ./logs/server_*_20260303_231749.log
+    Discovery log : ./logs/discovery_20260303_231749.log
+    Stress summaries:
+      ./logs/stress_summary_fork.txt
+      ./logs/stress_summary_select.txt
+      ./logs/stress_summary_thread.txt
+    Latency files:
+      ./logs/latency_fork_load.txt
+      ./logs/latency_select_load.txt
+      ./logs/latency_thread_load.txt
+    Graphs:
+      ./graphs/cpu_memory_vs_clients.png
+      ./graphs/cpu_over_time.png
+      ./graphs/latency_distribution.png
+      ./graphs/latency_overlay.png
+      ./graphs/memory_over_time.png
+      ./graphs/throughput_vs_clients.png
+══════════════════════════════════════════════

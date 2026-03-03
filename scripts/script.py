@@ -40,7 +40,7 @@ import sys
 CLIENT_BINARY   = "./chat_client/client"   # path to compiled client
 LOGS_DIR        = "./logs"                 # must exist; monitor.c writes here too
 MESSAGES_PER_CLIENT = 30                   # broadcasts per bot in load test
-BROADCAST_DELAY     = 0.15                  # seconds between each message
+BROADCAST_DELAY     = 0.0                  # seconds between each message
 BOT_USERNAME_PREFIX = "bot"
 BOT_PASSWORD        = "pass123"
 
@@ -270,7 +270,7 @@ def run_stress_test(server_type: str, messages_per_bot: int = 15):
 # ─────────────────────────────────────────────
 # Latency Report Helper
 # ─────────────────────────────────────────────
-def print_latency_report(server_type: str):
+def print_latency_report(server_type: str, phase: str = ""):
     """
     Read the latency log written by client.c's receive_handler
     and print a summary.
@@ -280,8 +280,9 @@ def print_latency_report(server_type: str):
     the file to latency_<server_type>.txt to preserve it.
     """
     raw_file = os.path.join(LOGS_DIR, "latency.txt")
-    print(server_type);
-    out_file = os.path.join(LOGS_DIR, f"latency_{server_type}.txt")
+    print(server_type)
+    tag = f"{server_type}_{phase}" if phase else server_type
+    out_file = os.path.join(LOGS_DIR, f"latency_{tag}.txt")
 
     if not os.path.exists(raw_file):
         print(f"[!] No latency file found at {raw_file}")
@@ -365,11 +366,11 @@ def main():
         run_load_test(args.bots, args.server, args.messages)
 
         # Step 3: Print latency summary from what client.c logged
-        print_latency_report(args.server)
+        print_latency_report(args.server, phase="load")
 
     elif args.mode == "stress":
         run_stress_test(args.server, messages_per_bot=args.messages)
-        print_latency_report(args.server)
+        print_latency_report(args.server, phase="stress")
 
 
 if __name__ == "__main__":

@@ -319,7 +319,7 @@ void handle_pipe_message(int index)
 
 int main()
 {
-  start_monitor("../logs/metrics_fork.txt");
+  start_monitor("./logs/metrics_fork.txt");
   signal(SIGCHLD, SIG_IGN);
 
   int server_socket;

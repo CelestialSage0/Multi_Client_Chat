@@ -1,0 +1,14 @@
+I learned about socket programming, how to make different servers and run
+them. Discovery server was kinda weird as I couldn't see a proper use of
+it, but I guess in a real system where the chat server IP isn't fixed it
+would make more sense. I also got more comfortable
+with pthreads, mutexes, and how processes communicate with each other.
+Using pipes was new for me and was hard, especially figuring out which
+end to close in the parent vs child and why things deadlocked when I got
+it wrong.
+
+The biggest takeaway was that getting code to work and getting it to work
+correctly under load are very different things. Concurrency bugs like
+deadlocks and race conditions don't show up in casual testing, only when
+multiple clients are actually hammering the server at the same time.
+Benchmarking was also harder than expected.

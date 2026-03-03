@@ -294,7 +294,7 @@ void *handle_client(void *arg)
 
 int main()
 {
-  start_monitor("../logs/metrics_thread.txt");
+  start_monitor("./logs/metrics_thread.txt");
   int server_socket, client_socket;
   struct sockaddr_in server_address, client_address;
   socklen_t client_address_len;

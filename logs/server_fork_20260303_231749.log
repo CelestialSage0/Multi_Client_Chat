@@ -1,0 +1,722 @@
+Fork-based server listening on port 8000
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Forked child process (PID: 171815) to handle client
+
+$ 17782241665523 LOGIN bot0 
+$ 17782241824203 LOGIN  
+Forked child process (PID: 171817) to handle client
+
+$ 17782241895766 LOGIN bot1 
+$ 17782242030467 LOGIN  
+$ 17782241955958 LOGIN bot2 
+$ 17782242099363 LOGIN  
+$ 17782242334724 LOGIN bot3 
+$ 17782242449323 LOGIN  
+Forked child process (PID: 171819) to handle client
+
+$ 17782244479840 LOGIN bot4 
+$ 17782244619273 LOGIN  
+Forked child process (PID: 171821) to handle client
+
+$ 17782245591448 LOGIN bot5 
+$ 17782245713881 LOGIN  
+Forked child process (PID: 171826) to handle client
+
+Forked child process (PID: 171827) to handle client
+
+Forked child process (PID: 171828) to handle client
+
+$ 17782246654579 LOGIN bot8 
+$ 17782246787651 LOGIN  
+Forked child process (PID: 171829) to handle client
+
+$ 17782246676537 LOGIN bot7 
+$ 17782246794135 LOGIN  
+$ 17782246811713 LOGIN bot9 
+$ 17782246922998 LOGIN  
+$ 17782246822586 LOGIN bot6 
+$ 17782246943726 LOGIN  
+$ 17783041441520 BROADCAST hello_from_bot0_msg0 
+$ 17783041546075 BROADCAST hello_from_bot1_msg017783041678380 BROADCAST hello_from_bot1_msg117783041799960 BROADCAST hello_from_bot1_msg217783041810445 BROADCAST hello_from_bot1_msg3
+$ 17783041506071 BROADCAST hello_from_bot0_msg117783041571928 BROADCAST hello_from_bot0_msg217783041686521 BROADCAST hello_from_bot0_msg317783041837594 BROADCAST hello_from_bot0_msg417783041963413 BROADCAST hello_from_bot0_msg5
+$ 17783041959732 BROADCAST hello_from_bot2_msg017783042030865 BROADCAST hello_from_bot2_msg117783042062170 BROADCAST hello_from_bot2_msg217783042185642 BROADCAST hello_from_bot2_msg3
+$ 17783041721862 BROADCAST hello_from_bot3_msg017783041903767 BROADCAST hello_from_bot3_msg117783042154191 BROADCAST hello_from_bot3_msg217783042327756 BROADCAST hello_from_bot3_msg317783042422932 BROADCAST hello_from_bot3_msg417783042510802 BROADCAST hello_from_bot3_msg5
+$ 17783042206078 BROADCAST hello_from_bot0_msg617783042383534 BROADCAST hello_from_bot0_msg717783042534722 BROADCAST hello_from_bot0_msg817783042591318 BROADCAST hello_from_bot0_msg9
+$ 17783042362706 BROADCAST hello_from_bot2_msg417783042429468 BROADCAST hello_from_bot2_msg517783042607780 BROADCAST hello_from_bot2_msg617783042622287 BROADCAST hello_from_bot2_msg717783042833398 BROADCAST hello_from_bot2_msg8
+$ 17783042662774 BROADCAST hello_from_bot3_msg617783042767852 BROADCAST hello_from_bot3_msg717783042827380 BROADCAST hello_from_bot3_msg817783042927698 BROADCAST hello_from_bot3_msg9
+$ 17783042724596 BROADCAST hello_from_bot0_msg101778304Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Forked child process (PID: 171815) to handle client
+
+$ 17782241665523 LOGIN bot0 
+$ 17782241824203 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Forked child process (PID: 171815) to handle client
+
+$ 17782241665523 LOGIN bot0 
+$ 17782241824203 LOGIN  
+Forked child process (PID: 171817) to handle client
+
+$ 17782241895766 LOGIN bot1 
+$ 17782242030467 LOGIN  
+$ 17782241955958 LOGIN bot2 
+$ 17782242099363 LOGIN  
+$ 17782242334724 LOGIN bot3 
+$ 17782242449323 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Forked child process (PID: 171815) to handle client
+
+$ 17782241665523 LOGIN bot0 
+$ 17782241824203 LOGIN  
+Forked child process (PID: 171817) to handle client
+
+$ 17782241895766 LOGIN bot1 
+$ 17782242030467 LOGIN  
+$ 17782241955958 LOGIN bot2 
+$ 17782242099363 LOGIN  
+$ 17782242334724 LOGIN bot3 
+$ 17782242449323 LOGIN  
+Forked child process (PID: 171819) to handle client
+
+$ 17782244479840 LOGIN bot4 
+$ 17782244619273 LOGIN  
+Fork-based server listening on port 8000
+Forked child process (PID: 171698) to handle client
+
+$ 17773706524251 LOGIN bot0 
+$ 17773706665502 LOGIN  
+Forked child process (PID: 171703) to handle client
+
+$ 17774458345674 LOGIN bot1 
+$ 17774458536237 LOGIN  
+Forked child process (PID: 171718) to handle client
+
+$ 17775210108451 LOGIN bot2 
+$ 17775210434769 LOGIN  
+Forked child process (PID: 171722) to handle client
+
+$ 17775961616922 LOGIN bot3 
+$ 17775961766616 LOGIN  
+Forked child process (PID: 171727) to handle client
+
+$ 17776713766946 LOGIN bot4 
+$ 17776713891829 LOGIN  
+Forked child process (PID: 171732) to handle client
+
+$ 17777466156347 LOGIN bot5 
+$ 17777466291211 LOGIN  
+Forked child process (PID: 171749) to handle client
+
+$ 17778218539208 LOGIN bot6 
+$ 17778218721873 LOGIN  
+Forked child process (PID: 171754) to handle client
+
+$ 17778970054095 LOGIN bot7 
+$ 17778970176945 LOGIN  
+Forked child process (PID: 171761) to handle client
+
+$ 17779722107230 LOGIN bot8 
+$ 17779722282225 LOGIN  
+Forked child process (PID: 171766) to handle client
+
+$ 17780473895940 LOGIN bot9 
+$ 17780474033849 LOGIN  
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+[PID 171689]: Client  disconnected
+Forked child process (PID: 171811) to handle client
+
+Forked child process (PID: 171814) to handle client
+
+Forked child process (PID: 171815) to handle client
+
+$ 17782241665523 LOGIN bot0 
+$ 17782241824203 LOGIN  
+Forked child process (PID: 171817) to handle client
+
+$ 17782241895766 LOGIN bot1 
+$ 17782242030467 LOGIN  
+$ 17782241955958 LOGIN bot2 
+$ 17782242099363 LOGIN  
+$ 17782242334724 LOGIN bot3 
+$ 17782242449323 LOGIN  
+Forked child process (PID: 171819) to handle client
+
+$ 17782244479840 LOGIN bot4 
+$ 17782244619273 LOGIN  
+Forked child process (PID: 171821) to handle client
+
+$ 17782245591448 LOGIN bot5 
+$ 17782245713881 LOGIN  
+Forked child process (PID: 171826) to handle client
+

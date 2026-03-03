@@ -297,7 +297,7 @@ void handle_client_message(int i)
 
 int main()
 {
-  start_monitor("../logs/metrics_select.txt");
+  start_monitor("./logs/metrics_select.txt");
   int server_socket;
   struct sockaddr_in server_address;
 

@@ -1,0 +1,106 @@
+Thread-based server listening on port 8000
+New connection from 127.0.0.1:38472
+Created thread (ID: 140321868383936) to handle client
+
+$ 17860048112717 LOGIN bot0 17860048207559 
+New connection from 127.0.0.1:38482
+Created thread (ID: 140321859991232) to handle client
+
+$ 17860800664036 LOGIN bot1 17860800826118 
+New connection from 127.0.0.1:38490
+Created thread (ID: 140321851598528) to handle client
+
+$ 17861552552317 LOGIN bot2 17861552713434 
+New connection from 127.0.0.1:38492
+Created thread (ID: 140321843205824) to handle client
+
+$ 17862304231419 LOGIN bot3 17862304338526 
+New connection from 127.0.0.1:47330
+Created thread (ID: 140321834813120) to handle client
+
+$ 17863056728060 LOGIN bot4 17863056901009 
+New connection from 127.0.0.1:47340
+Created thread (ID: 140321826420416) to handle client
+
+$ 17863808618120 LOGIN bot5 17863808726908 
+New connection from 127.0.0.1:47354
+Created thread (ID: 140321748940480) to handle client
+
+$ 17864561031793 LOGIN bot6 17864561197141 
+New connection from 127.0.0.1:47364
+Created thread (ID: 140321740547776) to handle client
+
+$ 17865312604713 LOGIN bot7 17865312753381 
+New connection from 127.0.0.1:47380
+Created thread (ID: 140321732155072) to handle client
+
+$ 17866064658584 LOGIN bot8 17866064823088 
+New connection from 127.0.0.1:47396
+Created thread (ID: 140321723762368) to handle client
+
+$ 17866816497211 LOGIN bot9 17866816629140 
+[Thread 140321868383936]: Client bot0 disconnected
+[Thread 140321859991232]: Client bot1 disconnected
+[Thread 140321851598528]: Client bot2 disconnected
+[Thread 140321843205824]: Client bot3 disconnected
+[Thread 140321834813120]: Client bot4 disconnected
+[Thread 140321826420416]: Client bot5 disconnected
+[Thread 140321748940480]: Client bot6 disconnected
+[Thread 140321740547776]: Client bot7 disconnected
+[Thread 140321732155072]: Client bot8 disconnected
+[Thread 140321723762368]: Client bot9 disconnected
+New connection from 127.0.0.1:47410
+Created thread (ID: 140321723762368) to handle client
+
+$ 17868581866679 LOGIN bot0 17868581996632 
+New connection from 127.0.0.1:47416
+Created thread (ID: 140321732155072) to handle client
+
+$ 17868582605750 LOGIN bot1 17868582701704 
+New connection from 127.0.0.1:47418
+Created thread (ID: 140321740547776) to handle client
+
+$ 17868583627996 LOGIN bot3 
+$ 17868583747758 LOGIN  
+New connection from 127.0.0.1:47434
+Created thread (ID: 140321748940480) to handle client
+
+New connection from 127.0.0.1:47438
+Created thread (ID: 140321868383936) to handle client
+
+$ 17868584104232 LOGIN bot4 17868584216779 
+$ 17868584164838 LOGIN bot2 17868584254609 
+New connection from 127.0.0.1:47450
+Created thread (ID: 140321859991232) to handle client
+
+$ 17868584443084 LOGIN bot5 17868584549128 
+New connection from 127.0.0.1:47462
+Created thread (ID: 140321851598528) to handle client
+
+New connection from 127.0.0.1:47458
+$ 17868586596588 LOGIN bot9 
+Created thread (ID: 140321843205824) to handle client
+
+$ 17868586729239 LOGIN  
+New connection from 127.0.0.1:47476
+Created thread (ID: 140321834813120) to handle client
+
+New connection from 127.0.0.1:47478
+Created thread (ID: 140321826420416) to handle client
+
+$ 17868586611657 LOGIN bot7 17868586737069 
+$ 17868586713667 LOGIN bot6 17868586831215 
+$ 17868586597208 LOGIN bot8 17868586723187 
+$ 17869381764234 BROADCAST hello_from_bot0_msg0 
+$ 17869381821843 BROADCAST hello_from_bot0_msg117869381827664 BROADCAST hello_from_bot0_msg217869381855130 BROADCAST hello_from_bot0_msg317869381913142 BROADCAST hello_from_bot0_msg417869381971745 BROADCAST hello_from_bot0_msg517869382024062 BROADCAST hello_from_bot0_msg6
+$ 17869382139528 BROADCAST hello_from_bot0_msg717869382156735 BROADCAST hello_from_bot0_msg8
+$ 17869382428423 BROADCAST hello_from_bot0_msg9 
+$ 17869382474572 BROADCAST hello_from_bot0_msg1017869382529480 BROADCAST hello_from_bot0_msg11
+$ 17869382585934 BROADCAST hello_from_bot0_msg1217869382645485 BROADCAST hello_from_bot0_msg13
+$ 17869382705391 BROADCAST hello_from_bot0_msg1417869382768793 BROADCAST hello_from_bot0_msg15
+$ 17869382847909 BROADCAST hello_from_bot0_msg16 
+$ 17869382952617 BROADCABroadcast failed: Bad file descriptor
+Broadcast failed: Bad file descriptor
+Broadcast failed: Bad file descriptor
+Broadcast failed: Bad file descriptor
+Broadcast failed: Bad file descriptor
