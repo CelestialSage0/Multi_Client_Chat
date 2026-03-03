@@ -1,45 +1,46 @@
 # CS 3205 Assignment 2: Multi-Client Chat System
 
 ## System Architecture Overview
-
-
+```
 ┌──────────────────────────────────────────────────────────────┐
-│ Chat Client (client.c) │
-│ CLI: broadcast / private / list / history / status │
-└──────────┬───────────────────────────────────────────────────┘
-│ TCP :8080 (auth) │ TCP :8000 (chat)
-▼ ▼
-┌─────────────────────────┐ ┌──────────────────────────────────┐
-│ Discovery Server │ │ Chat Server (3 variants) │
-│ REGISTER / AUTH │ │ fork.c – one process/client │
-│ Maps user → IP:port │ │ thread.c – one thread/client │
-└─────────────────────────┘ │ select.c – single-threaded I/O │
-│ │
-│ All: broadcast, private, │
-│ user list, status, history │
-└──────────────────────────────────┘
+│                    Chat Client  (client.c)                   │
+│  CLI: broadcast / private / list / history / status          │
+└──────────┬──────────────────────────────────────────────────-┘
+           │ TCP :8080 (auth)              │ TCP :8000 (chat)
+           ▼                               ▼
+┌─────────────────────────┐   ┌──────────────────────────────────┐
+│   Discovery Server      │   │   Chat Server  (3 variants)      │
+│  REGISTER / AUTH        │   │  fork.c   – one process/client   │
+│  Maps user → IP:port    │   │  thread.c – one thread/client    │
+└─────────────────────────┘   │  select.c – single-threaded I/O  │
+                              │  All: broadcast, private,        │
+                              │  user list, status, history      │
+                              └──────────────────────────────────┘
+```
 
-
----
-
-## Directory Structure
-
-
+### Directory Structure
+```
 project/
-├── chat_server/ fork.c thread.c select.c
-├── chat_client/ client.c
-├── discovery/ server.c
-├── monitoring/ monitor.c monitor.h
-├── benchmarks/ script.py plot.py
-├── logs/ metrics_*.txt latency.txt history.json
-├── graphs/ (generated PNGs)
+├── chat_server/     fork.c  thread.c  select.c
+├── chat_client/     client.c
+├── discovery/       server.c
+├── monitoring/      monitor.c  monitor.h
+├── benchmarks/      script.py  plot.py
+├── logs/            metrics_*.txt  latency.txt  history.json
+├── graphs/          (generated PNGs)
 ├── Makefile
 └── README.md
+```
+
+---
 
 ## Protocol Specification
 
 All messages are **plain-text TCP** framed by `\n`.  
-Every client message is prefixed with a **nanosecond `CLOCK_MONOTONIC` timestamp**.<timestamp_ns>  <COMMAND>  [arg1]  [rest of message]\n
+Every client message is prefixed with a **nanosecond `CLOCK_MONOTONIC` timestamp**.
+```
+<timestamp_ns>  <COMMAND>  [arg1]  [rest of message]\n
+```
 
 ### Client → Chat Server
 
@@ -74,40 +75,57 @@ Every client message is prefixed with a **nanosecond `CLOCK_MONOTONIC` timestamp
 ### Chat History Format — NDJSON (`logs/history.json`)
 
 One JSON object per line, appended on every message:
-```json{"type":"BROADCAST","from":"alice","to":"bob","msg":"hello world","timestamp":"2025-03-01T12:00:00Z"}
+```json
+{"type":"BROADCAST","from":"alice","to":"bob","msg":"hello world","timestamp":"2025-03-01T12:00:00Z"}
 {"type":"PRIVATE","from":"alice","to":"charlie","msg":"hi!","timestamp":"2025-03-01T12:01:05Z"}
+```
 
 ---
 
 ## Compilation and Execution
 
 ### Prerequisites
-```bashsudo apt-get install gcc make python3 python3-pip
+```bash
+sudo apt-get install gcc make python3 python3-pip
 pip3 install matplotlib numpy
+```
 
 ### Build
-```bashmake all       # build everything
+```bash
+make all       # build everything
 make fork      # fork server only
 make thread    # thread server only
 make select    # select server only
 make client    # client only
 make clean
+```
 
 ### Running
-```bashmkdir -p logs graphsTerminal 1 — Discovery server (port 8080)
-./discovery/discovery_serverTerminal 2 — Chat server (port 8000), pick one:
+```bash
+mkdir -p logs graphs
+
+# Terminal 1 — Discovery server (port 8080)
+./discovery/discovery_server
+
+# Terminal 2 — Chat server (port 8000), pick one:
 ./chat_server/fork_server
 ./chat_server/thread_server
-./chat_server/select_serverTerminal 3, 4, … — Clients
-./chat_client/client
+./chat_server/select_server
 
-### Client CLI CommandsBROADCAST hello world
+# Terminal 3, 4, … — Clients
+./chat_client/client
+```
+
+### Client CLI Commands
+```
+BROADCAST hello world
 PRIVATE alice how are you?
 LIST
 HISTORY
 STATUS available
 STATUS busy
 STATUS away
+```
 
 ---
 
@@ -120,11 +138,19 @@ STATUS away
 4. Test all commands across clients.
 
 ### Automated Benchmarks
-```bashcd benchmarksLoad test (10 bots × 30 messages)
-python3 script.py --mode load --server thread --bots 10 --messages 30Stress test (ramp 2 → 12 clients)
-python3 script.py --mode stress --server forkPreserve latency files per variant, then graph:
+```bash
+cd benchmarks
+
+# Load test (10 bots × 30 messages)
+python3 script.py --mode load --server thread --bots 10 --messages 30
+
+# Stress test (ramp 2 → 12 clients)
+python3 script.py --mode stress --server fork
+
+# Preserve latency files per variant, then graph:
 cp ../logs/latency.txt ../logs/latency_fork.txt
 python3 plot.py
+```
 
 ---
 
