@@ -1,32 +1,40 @@
 # CS 3205 Assignment 2: Multi-Client Chat System
 
-## System Architecture Overview┌──────────────────────────────────────────────────────────────┐
-│                    Chat Client  (client.c)                    │
-│  CLI: broadcast / private / list / history / status          │
-└──────────┬──────────────────────────────────────────────────-┘
-│ TCP :8080 (auth)              │ TCP :8000 (chat)
-▼                               ▼
-┌─────────────────────────┐   ┌──────────────────────────────────┐
-│   Discovery Server      │   │   Chat Server  (3 variants)      │
-│  REGISTER / AUTH        │   │  fork.c   – one process/client   │
-│  Maps user → IP:port    │   │  thread.c – one thread/client    │
-└─────────────────────────┘   │  select.c – single-threaded I/O  │
-│  All: broadcast, private,        │
-│  user list, status, history      │
+## System Architecture Overview
+
+
+┌──────────────────────────────────────────────────────────────┐
+│ Chat Client (client.c) │
+│ CLI: broadcast / private / list / history / status │
+└──────────┬───────────────────────────────────────────────────┘
+│ TCP :8080 (auth) │ TCP :8000 (chat)
+▼ ▼
+┌─────────────────────────┐ ┌──────────────────────────────────┐
+│ Discovery Server │ │ Chat Server (3 variants) │
+│ REGISTER / AUTH │ │ fork.c – one process/client │
+│ Maps user → IP:port │ │ thread.c – one thread/client │
+└─────────────────────────┘ │ select.c – single-threaded I/O │
+│ │
+│ All: broadcast, private, │
+│ user list, status, history │
 └──────────────────────────────────┘
 
-### Directory Structureproject/
-├── chat_server/     fork.c  thread.c  select.c
-├── chat_client/     client.c
-├── discovery/       server.c
-├── monitoring/      monitor.c  monitor.h
-├── benchmarks/      script.py  plot.py
-├── logs/            metrics_*.txt  latency.txt  history.json
-├── graphs/          (generated PNGs)
-├── Makefile
-└── README.md
 
 ---
+
+## Directory Structure
+
+
+project/
+├── chat_server/ fork.c thread.c select.c
+├── chat_client/ client.c
+├── discovery/ server.c
+├── monitoring/ monitor.c monitor.h
+├── benchmarks/ script.py plot.py
+├── logs/ metrics_*.txt latency.txt history.json
+├── graphs/ (generated PNGs)
+├── Makefile
+└── README.md
 
 ## Protocol Specification
 
